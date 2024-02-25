@@ -2,9 +2,9 @@
 # Movie Showcase
 web application that showcases the list of movies from the TMDB API using Axios. It allows users to search for movies by title, view movie details such as title, poster, overview, rating, and release date. Browse a list of popular movies, upcoming movies and top rated movies.
 
-<!-- ## DEMO
-Visit the live demo of Movie Showcase at:
-[Movie Showcase]() -->
+## DEMO
+Visit the live demo of movie-showcase at:
+[Movie-showcase](https://movie-showcase-ten.vercel.app/)
 
 
 ## Features
