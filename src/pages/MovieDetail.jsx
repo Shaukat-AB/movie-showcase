@@ -2,13 +2,13 @@ import { useParams } from "react-router-dom";
 import { TbStarFilled } from "react-icons/tb";
 import imgBackup from "../assets/405-image.jpg";
 import { Spinner, ErrorMsg } from "../components";
-import { useAxios } from "../hooks/useAxios";
 import { useTitle } from "../hooks/useTitle";
+import { useGetMovieById } from "../hooks/useGetMovieById";
 
 export const MovieDetail = ({ apiPath }) => {
     const params = useParams();
     const id = params["id"];
-    const [movie, isLoading, error] = useAxios(`${apiPath}/${id}?`);
+    const [movie, isLoading, error] = useGetMovieById(apiPath, id)
     const image = movie?.poster_path
         ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
         : imgBackup;

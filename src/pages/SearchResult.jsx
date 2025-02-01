@@ -1,14 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 import { MovieCard, Spinner, ErrorMsg } from "../components";
-import { useAxios } from "../hooks/useAxios";
 import { useTitle } from "../hooks/useTitle";
+import { useSearchMovie } from "../hooks/useSearchMovie";
 
 export const SearchResult = ({ apiPath }) => {
     const [params] = useSearchParams();
     const query = params.get("q");
-    const [movies, isLoading, error] = useAxios(
-        `${apiPath}?query=${query}&include_adult=false&language=en-US&page=1&`
-    );
+    const [movies, isLoading, error] = useSearchMovie(apiPath, query);
+
     // update document Title
     const documentTitle = useTitle(`Results for '${query}'`);
 

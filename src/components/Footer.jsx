@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 
+const currentYear = new Date().getFullYear();
+
 export const Footer = () => {
     return (
         <footer>
             <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                    © 2024{" "}
+                    © {currentYear}{" "}
                     <Link to="/" className="hover:underline">
                         Movie
                     </Link>
@@ -18,17 +20,26 @@ export const Footer = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/movies/popular" className="hover:underline me-4 md:me-6">
+                        <Link
+                            to="/movies/popular"
+                            className="hover:underline me-4 md:me-6"
+                        >
                             Popular
                         </Link>
                     </li>
                     <li>
-                        <Link to="/movies/top" className="hover:underline me-4 md:me-6">
+                        <Link
+                            to="/movies/top"
+                            className="hover:underline me-4 md:me-6"
+                        >
                             Top
                         </Link>
                     </li>
                     <li>
-                        <Link to="/movies/upcoming" className="hover:underline me-4 md:me-6">
+                        <Link
+                            to="/movies/upcoming"
+                            className="hover:underline me-4 md:me-6"
+                        >
                             Upcoming
                         </Link>
                     </li>

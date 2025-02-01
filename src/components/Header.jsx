@@ -1,25 +1,17 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { TbSearch, TbMenu2, TbSun, TbMoon } from "react-icons/tb";
 import Logo from "../assets/movie-logo.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SearchField } from "./SearchField";
+import { useLocalDarmode } from "../hooks/useLocalDarmode";
 
 export const Header = () => {
     const [open, setOpen] = useState(false);
-    const [darkmode, setDarkmode] = useState(
-        JSON.parse(localStorage.getItem("darkmode")) || false
-    );
+    const [darkmode, setDarkmode] = useLocalDarmode()
     const navigate = useNavigate();
     const onSearch = (value) => {
         navigate(`/search?q=${value}`);
     };
-
-    useEffect(() => {
-        localStorage.setItem("darkmode", JSON.stringify(darkmode));
-        darkmode
-            ? document.documentElement.classList.add("dark")
-            : document.documentElement.classList.remove("dark");
-    }, [darkmode]);
 
     return (
         <header>

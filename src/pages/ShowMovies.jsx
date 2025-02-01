@@ -1,9 +1,10 @@
 import { MovieCard, Spinner, ErrorMsg } from "../components";
-import { useAxios } from "../hooks/useAxios";
+import { useGetMovies } from "../hooks/useGetMovies";
 import { useTitle } from "../hooks/useTitle";
 
 export const ShowMovies = ({ apiPath, title }) => {
-    const [movies, isLoading, error] = useAxios(`${apiPath}?language=en-US&page=1&`);
+    const [movies, isLoading, error] = useGetMovies(apiPath);
+
     // update document Title
     const documentTitle = useTitle(title);
 
