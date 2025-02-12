@@ -19,20 +19,26 @@ const AppRoutes = () => {
                 path="/movie/:id"
                 element={<MovieDetail apiPath="movie" />}
             />
-            <Route
-                path="/movies/popular"
-                element={<ShowMovies apiPath="movie/popular" title="Popular" />}
-            />
-            <Route
-                path="/movies/top"
-                element={<ShowMovies apiPath="movie/top_rated" title="Top" />}
-            />
-            <Route
-                path="/movies/upcoming"
-                element={
-                    <ShowMovies apiPath="movie/upcoming" title="Upcoming" />
-                }
-            />
+            <Route path="/movies">
+                <Route
+                    path="popular"
+                    element={
+                        <ShowMovies apiPath="movie/popular" title="Popular" />
+                    }
+                />
+                <Route
+                    path="top"
+                    element={
+                        <ShowMovies apiPath="movie/top_rated" title="Top" />
+                    }
+                />
+                <Route
+                    path="upcoming"
+                    element={
+                        <ShowMovies apiPath="movie/upcoming" title="Upcoming" />
+                    }
+                />
+            </Route>
             <Route path="*" element={<ErrorMsg msg="Page Not Found" />} />
         </Routes>
     );
