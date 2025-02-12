@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom";
-import { TbStarFilled } from "react-icons/tb";
 import imgBackup from "../assets/405-image.jpg";
 import { Spinner, ErrorMsg } from "../components";
 import { useTitle } from "../hooks/useTitle";
 import { useGetMovieById } from "../hooks/useGetMovieById";
+import { StarIcon } from "../lib";
 
 export const MovieDetail = ({ apiPath }) => {
     const params = useParams();
     const id = params["id"];
-    const [movie, isLoading, error] = useGetMovieById(apiPath, id)
+    const [movie, isLoading, error] = useGetMovieById(apiPath, id);
     const image = movie?.poster_path
         ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
         : imgBackup;
-    
+
     // update document Title
     const documentTitle = useTitle(movie?.title || "Not Found");
 
@@ -45,7 +45,7 @@ export const MovieDetail = ({ apiPath }) => {
                         ))}
                 </p>
                 <div className="flex items-center">
-                    <TbStarFilled className="w-4 h-4 text-yellow-300 me-1" />
+                    <StarIcon className="w-4 h-4 text-yellow-300 me-1" />
                     <p className="ms-2 text-gray-900 dark:text-white">
                         {movie?.vote_average}
                     </p>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TbSearch } from "react-icons/tb";
+import { SearchIcon } from "../lib";
 
 export const SearchField = ({ onSearch, className = "" }) => {
     const [value, setValue] = useState("");
@@ -17,7 +17,7 @@ export const SearchField = ({ onSearch, className = "" }) => {
     return (
         <form className={`relative ${className}`} onSubmit={(e) => onSubmit(e)}>
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <TbSearch className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                <SearchIcon className="w-4 h-4 text-gray-500 dark:text-gray-400" />
             </div>
             <input
                 type="text"

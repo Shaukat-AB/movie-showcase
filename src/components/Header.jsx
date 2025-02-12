@@ -1,13 +1,13 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import { TbSearch, TbMenu2, TbSun, TbMoon } from "react-icons/tb";
 import Logo from "../assets/movie-logo.svg";
 import { useState } from "react";
 import { SearchField } from "./SearchField";
 import { useLocalDarmode } from "../hooks/useLocalDarmode";
+import { MenuIcon, MoonIcon, SunIcon, SearchIcon } from "../lib";
 
 export const Header = () => {
     const [open, setOpen] = useState(false);
-    const [darkmode, setDarkmode] = useLocalDarmode()
+    const [darkmode, setDarkmode] = useLocalDarmode();
     const navigate = useNavigate();
     const onSearch = (value) => {
         navigate(`/search?q=${value}`);
@@ -36,9 +36,9 @@ export const Header = () => {
                                 Change Theme Light/Dark
                             </span>
                             {!darkmode ? (
-                                <TbSun className="w-5 h-5" />
+                                <SunIcon className="w-5 h-5" />
                             ) : (
-                                <TbMoon />
+                                <MoonIcon />
                             )}
                         </button>
 
@@ -50,7 +50,7 @@ export const Header = () => {
                             className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
                             onClick={() => setOpen(() => !open)}
                         >
-                            <TbSearch className="w-5 h-5" />
+                            <SearchIcon className="w-5 h-5" />
                             <span className="sr-only">Search</span>
                         </button>
                         {/* Search Field for Medium or larger screens*/}
@@ -68,7 +68,7 @@ export const Header = () => {
                             onClick={() => setOpen(!open)}
                         >
                             <span className="sr-only">Open main menu</span>
-                            <TbMenu2 className="w-5 h-5" />
+                            <MenuIcon className="w-5 h-5" />
                         </button>
                     </div>
 

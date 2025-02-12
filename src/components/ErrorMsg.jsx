@@ -1,10 +1,10 @@
-import { TbAlertCircleFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { AlertIcon } from "../lib";
 
 export const ErrorMsg = ({ msg = null }) => {
     return (
         <div className="max-w-7xl mx-auto w-full min-h-[80vh] flex flex-col items-center justify-center gap-4">
-            <TbAlertCircleFilled className="w-12 h-12 text-red-600" />
+            <AlertIcon className="w-12 h-12 text-red-600" />
             <h1 className="text-4xl text-gray-900 dark:text-gray-100 mb-8">
                 Something went wrong!
             </h1>
