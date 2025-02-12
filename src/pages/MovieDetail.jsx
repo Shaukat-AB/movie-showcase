@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-import imgBackup from "../assets/405-image.jpg";
-import { Spinner, ErrorMsg } from "../components";
+import { Spinner, ErrorMsg, MovieImage } from "../components";
 import { useTitle } from "../hooks/useTitle";
 import { useGetMovieById } from "../hooks/useGetMovieById";
 import { StarIcon } from "../lib";
@@ -9,9 +8,6 @@ export const MovieDetail = ({ apiPath }) => {
     const params = useParams();
     const id = params["id"];
     const [movie, isLoading, error] = useGetMovieById(apiPath, id);
-    const image = movie?.poster_path
-        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-        : imgBackup;
 
     // update document Title
     const documentTitle = useTitle(movie?.title || "Not Found");
@@ -22,10 +18,10 @@ export const MovieDetail = ({ apiPath }) => {
     return (
         <section className="max-w-7xl mx-auto py-8 flex flex-wrap gap-4 justify-center xl:justify-start">
             <div className="max-w-sm">
-                <img
+                <MovieImage
                     className="rounded-t-lg"
-                    src={image}
-                    alt={movie?.title || "405 image"}
+                    path={movie?.poster_path}
+                    title={movie?.title || "405 image"}
                 />
             </div>
             <div className="ml-3 max-w-2xl text-gray-700 dark:text-gray-100">
