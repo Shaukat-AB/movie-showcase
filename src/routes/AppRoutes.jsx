@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { ShowMovies, MovieDetail, SearchResult } from "../pages";
+import { ErrorMsg } from "../components";
 
 const AppRoutes = () => {
     return (
@@ -32,6 +33,7 @@ const AppRoutes = () => {
                     <ShowMovies apiPath="movie/upcoming" title="Upcoming" />
                 }
             />
+            <Route path="*" element={<ErrorMsg msg="Page Not Found" />} />
         </Routes>
     );
 };
