@@ -1,6 +1,6 @@
-import { MovieCard, Spinner, ErrorMsg } from "../components";
-import { useGetMovies } from "../hooks/useGetMovies";
-import { useTitle } from "../hooks/useTitle";
+import { MovieCard, Spinner, ErrorMsg } from "../../components";
+import { useGetMovies } from "../../hooks/useGetMovies";
+import { useTitle } from "../../hooks/useTitle";
 
 export const ShowMovies = ({ apiPath, title }) => {
     const [movies, isLoading, error] = useGetMovies(apiPath);

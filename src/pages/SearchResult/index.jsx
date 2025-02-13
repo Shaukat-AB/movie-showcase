@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
-import { MovieCard, Spinner, ErrorMsg } from "../components";
-import { useTitle } from "../hooks/useTitle";
-import { useSearchMovie } from "../hooks/useSearchMovie";
+import { MovieCard, Spinner, ErrorMsg } from "../../components";
+import { useTitle } from "../../hooks/useTitle";
+import { useSearchMovie } from "../../hooks/useSearchMovie";
 
 export const SearchResult = ({ apiPath }) => {
     const [params] = useSearchParams();

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { Spinner, ErrorMsg, MovieImage } from "../components";
-import { useTitle } from "../hooks/useTitle";
-import { useGetMovieById } from "../hooks/useGetMovieById";
-import { StarIcon } from "../lib";
+import { Spinner, ErrorMsg, MovieImage } from "../../components";
+import { useTitle } from "../../hooks/useTitle";
+import { useGetMovieById } from "../../hooks/useGetMovieById";
+import { StarIcon } from "../../lib";
 
 export const MovieDetail = ({ apiPath }) => {
     const params = useParams();
