@@ -1,6 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { SearchField } from "./SearchField";
 
+export const navLinks = [
+    { title: "Home", path: "/" },
+    { title: "Popular", path: "/movies/popular" },
+    { title: "Top Rated", path: "/movies/top" },
+    { title: "Upcoming", path: "/movies/upcoming" },
+];
+
 export const NavBar = ({ open, onSearch }) => {
     return (
         <div
