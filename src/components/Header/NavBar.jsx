@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { SearchField } from "./SearchField";
 
-const navLinks = [
+export const navLinks = [
     { title: "Home", path: "/" },
     { title: "Popular", path: "/movies/popular" },
     { title: "Top Rated", path: "/movies/top" },
