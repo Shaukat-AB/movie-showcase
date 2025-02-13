@@ -1,9 +1,9 @@
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/movie-logo.svg";
+import Logo from "../../assets/movie-logo.svg";
 import { useState } from "react";
 import { SearchField } from "./SearchField";
-import { useLocalDarmode } from "../hooks/useLocalDarmode";
-import { MenuIcon, MoonIcon, SunIcon, SearchIcon } from "../lib";
+import { useLocalDarmode } from "../../hooks/useLocalDarmode";
+import { MenuIcon, MoonIcon, SunIcon, SearchIcon } from "../../lib";
 
 export const Header = () => {
     const [open, setOpen] = useState(false);

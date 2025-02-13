@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SearchIcon } from "../lib";
+import { SearchIcon } from "../../lib";
 
 export const SearchField = ({ onSearch, className = "" }) => {
     const [value, setValue] = useState("");

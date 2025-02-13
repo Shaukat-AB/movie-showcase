@@ -1,4 +1,4 @@
-import noImage from "../assets/images/405-image.jpg";
+import noImage from "../../assets/images/405-image.jpg";
 
 export const MovieImage = ({ path = "", title = "", className = "" }) => {
     const image = path ? `https://image.tmdb.org/t/p/w500/${path}` : noImage;

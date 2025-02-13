@@ -1,8 +1,8 @@
-export { Header } from "./Header";
-export { Footer } from "./Footer";
+export { Header } from "./Header/Header";
+export { Footer } from "./Footer/Footer";
 
-export { MovieCard } from "./MovieCard";
-export { MovieImage } from "./MovieImage";
-export { SearchField } from "./SearchField";
+export { MovieCard } from "./Movie/MovieCard";
+export { MovieImage } from "./Movie/MovieImage";
+export { SearchField } from "./Header/SearchField";
 export { Spinner } from "./Spinner";
 export { ErrorMsg } from "./ErrorMsg";
