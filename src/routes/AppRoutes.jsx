@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { ShowMovies, MovieDetail, SearchResult } from "../pages";
-import { ErrorMsg } from "../components";
+import { ShowMovies, MovieDetail, SearchResult, NotFound } from "../pages";
 
 const AppRoutes = () => {
     return (
@@ -39,7 +38,7 @@ const AppRoutes = () => {
                     }
                 />
             </Route>
-            <Route path="*" element={<ErrorMsg msg="Page Not Found" />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 };
