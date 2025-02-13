@@ -1,13 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { SearchField } from "./SearchField";
 
-export const navLinks = [
-    { title: "Home", path: "/" },
-    { title: "Popular", path: "/movies/popular" },
-    { title: "Top Rated", path: "/movies/top" },
-    { title: "Upcoming", path: "/movies/upcoming" },
-];
-
 export const NavBar = ({ open, onSearch }) => {
     return (
         <div
@@ -20,7 +13,7 @@ export const NavBar = ({ open, onSearch }) => {
                 {navLinks.map((navLink) => (
                     <li key={navLink.title}>
                         <NavLink
-                            to={navLink.title}
+                            to={navLink.path}
                             className={({ isActive }) =>
                                 isActive ? "nav-link-active" : "nav-link"
                             }
