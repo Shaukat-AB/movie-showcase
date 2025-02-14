@@ -3,10 +3,10 @@ import { MovieImage, PageWrapper } from "../../components";
 import { useGetMovieById } from "../../hooks/useGetMovieById";
 import { StarIcon } from "../../lib";
 
-export const MovieDetail = ({ apiPath }) => {
+export const MovieDetail = () => {
     const params = useParams();
     const id = params["id"];
-    const [movie, isLoading, error] = useGetMovieById(apiPath, id);
+    const [movie, isLoading, error] = useGetMovieById(id);
 
     return (
         <PageWrapper

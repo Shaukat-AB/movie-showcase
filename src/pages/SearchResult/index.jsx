@@ -2,10 +2,10 @@ import { useSearchParams } from "react-router";
 import { MovieCard, PageWrapper } from "../../components";
 import { useSearchMovie } from "../../hooks/useSearchMovie";
 
-export const SearchResult = ({ apiPath }) => {
+export const SearchResult = () => {
     const [params] = useSearchParams();
     const query = params.get("q");
-    const [movies, isLoading, error] = useSearchMovie(apiPath, query);
+    const [movies, isLoading, error] = useSearchMovie(query);
 
     return (
         <PageWrapper

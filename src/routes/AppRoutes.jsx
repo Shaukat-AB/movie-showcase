@@ -1,5 +1,11 @@
 import { Route, Routes } from "react-router";
 import { ShowMovies, MovieDetail, SearchResult, NotFound } from "../pages";
+import {
+    movieNowPlayingAPIPath,
+    moviePopularAPIPath,
+    movieTopRatedAPIPath,
+    movieUpcomingAPIPath,
+} from "../api";
 
 const AppRoutes = () => {
     return (
@@ -7,34 +13,37 @@ const AppRoutes = () => {
             <Route
                 path="/"
                 element={
-                    <ShowMovies apiPath="movie/now_playing" title="Home" />
+                    <ShowMovies apiPath={movieNowPlayingAPIPath} title="Home" />
                 }
             />
-            <Route
-                path="/search"
-                element={<SearchResult apiPath="search/movie" />}
-            />
-            <Route
-                path="/movie/:id"
-                element={<MovieDetail apiPath="movie" />}
-            />
+            <Route path="/search" element={<SearchResult />} />
+            <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/movies">
                 <Route
                     path="popular"
                     element={
-                        <ShowMovies apiPath="movie/popular" title="Popular" />
+                        <ShowMovies
+                            apiPath={moviePopularAPIPath}
+                            title="Popular"
+                        />
                     }
                 />
                 <Route
                     path="top"
                     element={
-                        <ShowMovies apiPath="movie/top_rated" title="Top" />
+                        <ShowMovies
+                            apiPath={movieTopRatedAPIPath}
+                            title="Top"
+                        />
                     }
                 />
                 <Route
                     path="upcoming"
                     element={
-                        <ShowMovies apiPath="movie/upcoming" title="Upcoming" />
+                        <ShowMovies
+                            apiPath={movieUpcomingAPIPath}
+                            title="Upcoming"
+                        />
                     }
                 />
             </Route>
