@@ -6,7 +6,7 @@ export const MovieImage = ({ path = "", title = "", className = "" }) => {
     return (
         <img
             width="500"
-            className={`w-500 h-auto rounded-t-lg ${className}`}
+            className={`w-500 font- h-auto rounded-t-lg ${className}`}
             src={image}
             alt={title || "405 image"}
         />

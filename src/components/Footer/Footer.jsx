@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { navLinks } from "../Header/NavBar";
 
 const currentYear = new Date().getFullYear();
@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 export const Footer = () => {
     return (
         <footer>
-            <div className="w-full mx-auto max-w-screen-xl flex flex-wrap-reverse gap-4 justify-center  md:justify-between items-center px-4 py-8">
+            <div className="w-full mx-auto max-w-(--breakpoint-xl) flex flex-wrap-reverse gap-4 justify-center  md:justify-between items-center px-4 py-8">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                     © {currentYear}{" "}
                     <Link to="/" className="footer-link">

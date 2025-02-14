@@ -1,5 +1,5 @@
 import { NavBar } from "./NavBar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { SearchField } from "./SearchField";
 import { useLocalDarmode } from "../../hooks/useLocalDarmode";
@@ -17,7 +17,7 @@ export const Header = () => {
     return (
         <header>
             <nav className="bg-white border-b-2 border-gray-200 dark:bg-gray-900 dark:border-slate-900">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div className="max-w-(--breakpoint-xl) flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link
                         to="/"
                         className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -30,7 +30,7 @@ export const Header = () => {
                     <div className="flex md:order-2 sm:ml-0 ml-auto">
                         <button
                             type="button"
-                            className="mx-4 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="mx-4 inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             onClick={() => setDarkmode(!darkmode)}
                         >
                             <span className="sr-only">
@@ -48,7 +48,7 @@ export const Header = () => {
                             data-collapse-toggle="navbar-search"
                             aria-controls="navbar-search"
                             aria-expanded="false"
-                            className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
+                            className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
                             onClick={() => setOpen(() => !open)}
                         >
                             <SearchIcon className="w-5 h-5" />
@@ -63,7 +63,7 @@ export const Header = () => {
                         <button
                             data-collapse-toggle="navbar-search"
                             type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                             aria-controls="navbar-search"
                             aria-expanded="false"
                             onClick={() => setOpen(!open)}

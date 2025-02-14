@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { MovieImage } from "./MovieImage";
 
 export const MovieCard = ({ movie }) => {
     const { id, original_title, title, overview, poster_path } = movie;
 
     return (
-        <div className="m-4 mb-8 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="m-4 mb-8 max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <Link to={`/movie/${id}`}>
                 <MovieImage path={poster_path} title={title} />
             </Link>

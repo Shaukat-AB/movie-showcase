@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { MovieImage, PageWrapper } from "../../components";
 import { useGetMovieById } from "../../hooks/useGetMovieById";
 import { StarIcon } from "../../lib";
@@ -32,7 +32,7 @@ export const MovieDetail = ({ apiPath }) => {
                             movie?.genres.map((genre) => (
                                 <span
                                     key={genre.id}
-                                    className="p-2 border border-gray-200 rounded dark:border-gray-600"
+                                    className="p-2 border border-gray-200 rounded-sm dark:border-gray-600"
                                 >
                                     {genre.name}
                                 </span>
