@@ -2,36 +2,38 @@ export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const API_KEY = import.meta.env.VITE_API_KEY;
 
 // API Paths
-export const searchAPIPath = 'search/movie';
-export const movieDetailAPIPath = 'movie';
-export const movieNowPlayingAPIPath = 'movie/now_playing';
-export const moviePopularAPIPath = 'movie/popular';
-export const movieTopRatedAPIPath = 'movie/top_rated';
-export const movieUpcomingAPIPath = 'movie/upcoming';
+export const apiPath = {
+  searchAPIPath: 'search/movie',
+  movieDetailAPIPath: 'movie',
+  movieNowPlayingAPIPath: 'movie/now_playing',
+  moviePopularAPIPath: 'movie/popular',
+  movieTopRatedAPIPath: 'movie/top_rated',
+  movieUpcomingAPIPath: 'movie/upcoming',
+};
 
 // Default url params
 const defaultSearchParams = '&include_adult=false&language=en-US&';
 const defaultMovieParams = 'language=en-US';
 
 // Create Base URL
-export const createReqURL = (apiPath) => {
-  if (typeof apiPath != 'string') {
+export const createReqURL = (path) => {
+  if (typeof path != 'string') {
     return '';
   }
-  return `${BASE_URL}${apiPath}api_key=${API_KEY}`;
+  return `${BASE_URL}${path}api_key=${API_KEY}`;
 };
 
 // Create Search URL
 export const createSearchReqURL = (query, pageParam = 1) => {
-  return `${searchAPIPath}?query=${query}${defaultSearchParams}page=${pageParam}&`;
+  return `${apiPath.searchAPIPath}?query=${query}${defaultSearchParams}page=${pageParam}&`;
 };
 
 // Create Movie detail URL
 export const createMovieByIdReqURL = (movieId) => {
-  return `${movieDetailAPIPath}/${movieId}?`;
+  return `${apiPath.movieDetailAPIPath}/${movieId}?`;
 };
 
 // Create Movie URL
-export const createMoviesReqURL = (apiPath, pageParam) => {
-  return `${apiPath}?${defaultMovieParams}&page=${pageParam}&`;
+export const createMoviesReqURL = (path, pageParam) => {
+  return `${path}?${defaultMovieParams}&page=${pageParam}&`;
 };
