@@ -6,7 +6,7 @@ import { useTitle } from '../../hooks/useTitle';
 export const SearchResult = () => {
   const [params] = useSearchParams();
   const query = params.get('q');
-  const [movies, isLoading] = useSearchMovie(query);
+  const { data: movies, isLoading } = useSearchMovie(query);
   const documentTitle = useTitle(`Results for '${query}'`);
 
   if (isLoading) return <Spinner />;

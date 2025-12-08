@@ -3,7 +3,7 @@ import { useGetMovies } from '../../hooks/useGetMovies';
 import { useTitle } from '../../hooks/useTitle';
 
 export const ShowMovies = ({ apiPath, title }) => {
-  const [movies, isLoading] = useGetMovies(apiPath);
+  const { data: movies, isLoading } = useGetMovies(apiPath);
   const documentTitle = useTitle(title);
 
   if (isLoading) return <Spinner />;

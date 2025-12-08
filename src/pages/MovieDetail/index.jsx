@@ -6,7 +6,7 @@ import { StarIcon } from '../../lib';
 export const MovieDetail = () => {
   const params = useParams();
   const id = params['id'];
-  const [movie, isLoading] = useGetMovieById(id);
+  const { data: movie, isLoading } = useGetMovieById(id);
   const documentTitle = useTitle(movie?.title || 'Not Found');
 
   if (isLoading || !Array.isArray(movie)) return <Spinner />;
