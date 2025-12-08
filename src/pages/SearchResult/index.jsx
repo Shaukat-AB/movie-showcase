@@ -5,14 +5,10 @@ import { useSearchMovie } from '../../hooks/useSearchMovie';
 export const SearchResult = () => {
   const [params] = useSearchParams();
   const query = params.get('q');
-  const [movies, isLoading, error] = useSearchMovie(query);
+  const [movies, isLoading] = useSearchMovie(query);
 
   return (
-    <PageWrapper
-      pagetitle={`Results for '${query}'`}
-      errorMsg={error}
-      isLoading={isLoading}
-    >
+    <PageWrapper pagetitle={`Results for '${query}'`} isLoading={isLoading}>
       <section className="max-w-7xl mx-auto py-8 flex flex-wrap justify-center xl:justify-start">
         {movies?.length === 0 ? (
           <p className="p-8 mt-12 flex-1 text-center text-3xl text-gray-700 dark:text-gray-100 break-all">
@@ -22,9 +18,8 @@ export const SearchResult = () => {
           ''
         )}
 
-        {movies?.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
+        {!isLoading &&
+          movies?.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </section>
     </PageWrapper>
   );
