@@ -5,7 +5,6 @@ import { createReqURL } from '../api';
 export const useAxios = (apiPath) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -14,8 +13,8 @@ export const useAxios = (apiPath) => {
         const url = createReqURL(apiPath);
         const { data: movieData } = await axios.get(url);
         setData(() => (movieData.results ? movieData.results : movieData));
-      } catch (e) {
-        setError(e.message);
+      } catch (err) {
+        throw err;
       } finally {
         setLoading(false);
       }
@@ -23,5 +22,5 @@ export const useAxios = (apiPath) => {
     getData();
   }, [apiPath]);
 
-  return { data, loading, error };
+  return { data, loading };
 };
