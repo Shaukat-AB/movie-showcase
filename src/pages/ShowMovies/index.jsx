@@ -10,9 +10,8 @@ export const ShowMovies = ({ apiPath, title }) => {
 
   return (
     <section className="max-w-7xl mx-auto py-8 flex flex-wrap justify-center xl:justify-start">
-      {movies?.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      {Array.isArray(movies) &&
+        movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
     </section>
   );
 };

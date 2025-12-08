@@ -13,17 +13,14 @@ export const SearchResult = () => {
 
   return (
     <section className="max-w-7xl mx-auto py-8 flex flex-wrap justify-center xl:justify-start">
-      {movies?.length === 0 ? (
+      {Array.isArray(movies) && movies.length === 0 && (
         <p className="p-8 mt-12 flex-1 text-center text-3xl text-gray-700 dark:text-gray-100 break-all">
           {`No results found for '${query}'`}
         </p>
-      ) : (
-        ''
       )}
 
-      {movies?.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      {Array.isArray(movies) &&
+        movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
     </section>
   );
 };
