@@ -10,7 +10,7 @@ export const MovieDetail = () => {
   const { data: movie, isLoading } = useGetMovieById(id);
   const documentTitle = useTitle(movie?.title || 'Not Found');
 
-  if (isLoading || !Array.isArray(movie)) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return (
     <section className="max-w-7xl mx-auto py-8 flex flex-wrap gap-4 justify-center xl:justify-start">
