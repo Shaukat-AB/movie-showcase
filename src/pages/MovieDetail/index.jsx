@@ -2,6 +2,7 @@ import { useParams } from 'react-router';
 import { MovieImage, Spinner } from '../../components';
 import { useGetMovieById } from '../../hooks/useGetMovieById';
 import { StarIcon } from '../../lib';
+import { useTitle } from '../../hooks/useTitle';
 
 export const MovieDetail = () => {
   const params = useParams();
