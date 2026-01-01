@@ -1,8 +1,10 @@
-import { ErrorMsg } from '../components';
-import { useTitle } from '../hooks/useTitle';
+import { ErrorMsg, Metadata } from '../components';
 
 export const NotFound = () => {
-  useTitle('Page Not Found');
-
-  return <ErrorMsg title="404" msg="Page Not Found" />;
+  return (
+    <>
+      <Metadata title="Page Not Found" />
+      <ErrorMsg heading="404" msg="Page Not Found" />
+    </>
+  );
 };

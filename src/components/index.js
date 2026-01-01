@@ -1,3 +1,5 @@
+export { Metadata } from './Metadata';
+
 export { Header } from './Header/Header';
 export { Footer } from './Footer/Footer';
 
